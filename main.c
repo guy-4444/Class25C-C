@@ -28,6 +28,7 @@ int main(void) {
     }
 
     printf("result = %d\n", result);
+    printf("Good Night");
 
 
     return 0;
