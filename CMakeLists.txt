@@ -3,4 +3,10 @@ project(Class25C C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Class25C main.c)
+add_executable(Class25C main.c
+        mainConst.c
+        mainConst.h
+        simpleIntCalculator.c
+        simpleIntCalculator.h
+
+)
