@@ -1,4 +1,6 @@
+#include "mainConst.h"
 #include <stdio.h>
+
 
 #define G_FACTOR 9.81
 const double VAT = 1.18;

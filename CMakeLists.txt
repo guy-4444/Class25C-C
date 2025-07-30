@@ -8,5 +8,7 @@ add_executable(Class25C main.c
         mainConst.h
         simpleIntCalculator.c
         simpleIntCalculator.h
+        chars.c
+        chars.h
 
 )
