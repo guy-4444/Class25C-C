@@ -70,6 +70,13 @@ void startL3() {
 
 }
 /**
+enter calculator type: 1- vector distance 2-shapes
+enter first point ("a, b")
+enter second point ("a, b")
+
+"the distnce is ..."
+
+
 enter shape C, S, R, T
 enter dimensions (double)
 C - r
