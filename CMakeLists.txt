@@ -10,5 +10,9 @@ add_executable(Class25C main.c
         simpleIntCalculator.h
         chars.c
         chars.h
+        mainOperators.c
+        mainOperators.h
+        L3.c
+        L3.h
 
 )
