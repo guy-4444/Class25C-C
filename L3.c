@@ -74,7 +74,7 @@ enter calculator type: 1- vector distance 2-shapes
 enter first point ("a, b")
 enter second point ("a, b")
 
-"the distnce is ..."
+"the distance is ..."
 
 
 enter shape C, S, R, T
