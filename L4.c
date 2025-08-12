@@ -12,7 +12,7 @@ void startL4() {
     printf("▧ ▧ ▧ ▧ L4 ▧ ▧ ▧ ▧\n");
 
     //tryTernaryIf(200);
-    //forLoopExamples();
+    // forLoopExamples();
     starLoop();
 }
 

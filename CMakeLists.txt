@@ -18,5 +18,7 @@ add_executable(Class25C main.c
         L4.h
         mainPrintf.c
         mainPrintf.h
+        L5.c
+        L5.h
 
 )
