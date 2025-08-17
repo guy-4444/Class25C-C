@@ -11,6 +11,8 @@ void whileWithBreak();
 void forWithBreak();
 void doubleForWithBreak();
 void forWithContinueAndBreak();
+void q1();
+void q2();
 
 void startL5() {
     printf("▧ ▧ ▧ ▧ L5 ▧ ▧ ▧ ▧\n");
@@ -19,7 +21,9 @@ void startL5() {
     // whileWithBreak();
     // forWithBreak();
     // doubleForWithBreak();
-    forWithContinueAndBreak();
+    // forWithContinueAndBreak();
+    // q1();
+    q2();
 
 
     // for (int i = 0; i < 10; ++i) {
@@ -136,11 +140,41 @@ void forWithContinueAndBreak() {
 }
 
 
+void q1() {
+    int i = 1;
+    while (1) {
+        if (i % 5 == 0 && i % 19 == 0) {
+            printf("%d ", i);
+            break;
+        }
+        i++;
+    }
+
+}
+
+void q2() {
+    int found = 0;
+    for (int i = 0; i < 100; i++) {
+        printf("(%d) ", i);
+        for (int j = 0; j < 100; j++) {
+            if (i * j > 300) {
+                printf("Success (%d,%d) ", i, j);
+                found = 1;
+                break;
+            }
+        }
+        if (found) {
+            break;
+        }
+    }
+}
+
+
 /**
 
 run while you find number that divide by 5 and 19 without remain ( % 5 == 0) - choose for or while
 
-run in double loop until i*j > 300 (limits 0..100)
+run in double loop until i*j > 300 (limits 0..<100)
 
 
 */

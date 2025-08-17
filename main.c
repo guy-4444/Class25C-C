@@ -7,11 +7,13 @@
 #include "L4.h"
 #include "L5.h"
 #include "mainPrintf.h"
+#include "L6.h"
+#include "mainFunctions.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startL5();
+    startMainFunctions();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");
