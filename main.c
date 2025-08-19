@@ -13,7 +13,7 @@
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startMainFunctions();
+    startL6();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");

@@ -13,17 +13,19 @@ void doubleForWithBreak();
 void forWithContinueAndBreak();
 void q1();
 void q2();
+int minyan();
 
 void startL5() {
     printf("▧ ▧ ▧ ▧ L5 ▧ ▧ ▧ ▧\n");
 
     // whileWithFlag();
     // whileWithBreak();
-    // forWithBreak();
+    forWithBreak();
     // doubleForWithBreak();
     // forWithContinueAndBreak();
     // q1();
-    q2();
+    // q2();
+    // minyan();
 
 
     // for (int i = 0; i < 10; ++i) {
@@ -167,6 +169,41 @@ void q2() {
             break;
         }
     }
+}
+
+int minyan() {
+
+    int numOfPrayers = 0;
+    int numOfClasses = 0;
+    int flag = 0;
+
+    int i;
+    for (i = 1; i <= 100; i++) {
+        numOfClasses++;
+        for (int j = 1; j <= 10; j++) {
+            if (i*j % 3 == 0  &&  i*j % 7 == 0) {
+                numOfPrayers++;
+
+                if (numOfPrayers == 10) {
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        if (flag == 1) {
+            break;
+        }
+    }
+
+    while(i <= 100) {
+        printf("no need for prayers...");
+        i++;
+    }
+
+    printf("numOfClasses: %d\n", i);
+    printf("numOfPrayers: %d\n", numOfPrayers);
+
+    return numOfClasses;
 }
 
 
