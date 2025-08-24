@@ -8,12 +8,14 @@ float SocialSecurity(float gross);
 float HealthTax(float gross);
 float EducationFund(float gross);
 float IncomeTax(float gross);
+float IncomeTaxW(float gross, float extraPoints);
 
 const float PENSION_RATE = 0.06;
 const float AVERAGE_SALARY_BT = 12536;
 const float MAX_SALARY_FOR_BT = 50695;
 const float MAX_SALARY_FOR_EDF = 16000;
 const float EDF_RATIO = 0.025;
+const float EXTRA_POINT_RATE = 242.0;
 
 void startL6() {
     printf("▧ ▧ ▧ ▧ L6 ▧ ▧ ▧ ▧\n");
@@ -31,14 +33,16 @@ void startL6() {
     printf("healthTax: %f\n", healthTax);
     printf("educationFund: %f\n", educationFund);
     printf("incomeTax: %f\n", incomeTax);
-    printf("\n\n\n", incomeTax);
+    printf("\n\n\n");
 
 
     printf("0: %f\n", IncomeTax(0));
     printf("1000: %f\n", IncomeTax(1000));
     printf("7000: %f\n", IncomeTax(7000));
+    printf("7000: %f\n", IncomeTaxW(7000, 2.25));
     printf("10000: %f\n", IncomeTax(10000));
     printf("35000: %f\n", IncomeTax(35000));
+    printf("35000: %f\n", IncomeTaxW(35000, 10.0));
     printf("50000: %f\n", IncomeTax(50000));
     printf("100000: %f\n", IncomeTax(100000));
 
@@ -104,7 +108,6 @@ const float INCOME_TAX_STEP_RATIO_6 = 0.47;
 const float INCOME_TAX_STEP_RATIO_7 = 0.50;
 
 float IncomeTax(float gross) {
-
     float part1 = min(gross, INCOME_TAX_STEP_1);
     gross = max(0, gross - INCOME_TAX_STEP_1);
     float part2 = min(gross, INCOME_TAX_STEP_2);
@@ -128,6 +131,16 @@ float IncomeTax(float gross) {
     tax += part5 * INCOME_TAX_STEP_RATIO_5;
     tax += part6 * INCOME_TAX_STEP_RATIO_6;
     tax += part7 * INCOME_TAX_STEP_RATIO_7;
+
+    return tax;
+}
+
+float IncomeTaxW(float gross, float extraPoints) {
+    float tax = IncomeTax(gross);
+
+    float extraPointsRefund = extraPoints * EXTRA_POINT_RATE;
+    tax -= extraPointsRefund;
+    tax = max(0, tax);
 
     return tax;
 }

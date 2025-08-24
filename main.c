@@ -9,11 +9,12 @@
 #include "mainPrintf.h"
 #include "L6.h"
 #include "mainFunctions.h"
+#include "L7.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startL6();
+    startL7();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");

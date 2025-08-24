@@ -24,5 +24,7 @@ add_executable(Class25C main.c
         L6.h
         mainFunctions.c
         mainFunctions.h
+        L7.c
+        L7.h
 
 )
