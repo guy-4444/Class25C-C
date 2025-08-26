@@ -10,11 +10,12 @@
 #include "L6.h"
 #include "mainFunctions.h"
 #include "L7.h"
+#include "L8.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startL7();
+    startL8();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");

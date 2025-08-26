@@ -20,13 +20,13 @@ void startL7() {
 }
 
 void mostCommonGrade() {
-    int grades[9] = {70, 80, 40, 90, 70, 90, 70, 30, 30};
+    int grades[16] = {70, 80, 40, 90, 70, 90, 89, 88, 89, 89, 89, 88, 91, 70, 30, 30};
     int counters[101];
     for (int i = 0; i < 101; ++i) {
         counters[i] = 0;
     }
 
-    for (int i = 0; i < 9; ++i) {
+    for (int i = 0; i < sizeof(grades) / sizeof(grades[0]); ++i) {
         int grade = grades[i];
         counters[grade]++;
     }

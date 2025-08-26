@@ -1,0 +1,10 @@
+void Factor(float arr[], int size, float value);
+void PrintArr(float arr[], int size);
+float Average(float arr[], int size);
+float Median(float arr[], int size);
+void Sort(float arr[], int size);
+int Find(float arr[], int size, float value);
+void Hit(float arr[], int size, float value);
+float Above60Percent(float arr[], int size);
+void MergeArray(float a[], int sa, float b[], int sb, float c[]);
+void MergeSortedArrays(float a[], int sa, float b[], int sb, float merged[]);
