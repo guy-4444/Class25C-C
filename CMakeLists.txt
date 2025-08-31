@@ -30,5 +30,9 @@ add_executable(Class25C main.c
         L8.h
         ArrayUtils.c
         ArrayUtils.h
+        L9.c
+        L9.h
+        Submarines.c
+        Submarines.h
 
 )
