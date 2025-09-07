@@ -13,11 +13,12 @@
 #include "L8.h"
 #include "L9.h"
 #include "Submarines.h"
+#include "L10.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startSubmarines();
+    startL10();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");
