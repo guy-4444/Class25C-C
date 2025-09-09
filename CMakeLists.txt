@@ -34,7 +34,11 @@ add_executable(Class25C main.c
         L9.h
         Submarines.c
         Submarines.h
-        L10.c
-        L10.h
+#        L10.c
+#        L10.h
+#        L11.c
+#        L11.h
+        Coffeka.c
+        Coffeka.h
 
 )
