@@ -15,11 +15,12 @@
 #include "Submarines.h"
 // #include "L10.h"
 #include "Coffeka.h"
+#include "Cinemafeka.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startCoffeka();
+    startCinemafeka();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");

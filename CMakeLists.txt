@@ -40,5 +40,7 @@ add_executable(Class25C main.c
 #        L11.h
         Coffeka.c
         Coffeka.h
+        Cinemafeka.c
+        Cinemafeka.h
 
 )
