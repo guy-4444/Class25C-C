@@ -66,7 +66,7 @@ void AddActorToMovie(Movie* movie, Actor* actor) {
     int newCount = movie->numOfActors + 1;
     Actor* grown = (Actor*)realloc(movie->actors, newCount * sizeof(Actor));
 
-    movie->actors[movie->numOfActors] = actor;
+    movie->actors[movie->numOfActors] = *actor;
     movie->actors = grown;
     movie->numOfActors = newCount;
 }
@@ -86,7 +86,7 @@ void startCinemafeka() {
 
     PrintMovie(&movies[0]);
     BuildMovie(movies, 0, "Forrest Gump", 154);
-    AddActorToMovie(movies[0], &actors[0]);
+    AddActorToMovie(&movies[0], &actors[0]);
 
     PrintMovie(&movies[0]);
 
