@@ -67,18 +67,6 @@ void createNewFlight(DB* db, char* company, char* flightNo, char* departure, cha
     db->numOfFlights++;
 }
 
-void createNewFlight2(Flight **y, int *currentSize, const char *company, const char *flightNo, const char *departure, const char *destination, Plane *plane) {
-    int newSize = *currentSize + 1;
-    Flight *t = realloc(*y, sizeof(Flight) * newSize);
-    *y = t;
-
-
-    Flight *f = &((*y)[*currentSize]);
-    initFlight(f, company, flightNo, departure, destination, plane);
-
-    *currentSize = newSize;
-}
-
 void PrintSeat(Flight* flight, char* name) {
     for (int i = 0; i < flight->numOfPassengers; ++i) {
         char* str = flight->passengers[i].name;
@@ -119,43 +107,9 @@ void AddPassengersFromFile(Flight* flight, char* fileName) {
     fclose(file);
 }
 
-void GenerateFlightReport(Flight* fl) {
-    char* fileName = "output.txt";
+void startAirAfeka() {
+    printf("▧ ▧ ▧ ▧ Welcome to AirAfeka ▧ ▧ ▧ ▧\n");
 
-    printf("A\n");
-    FILE *f = fopen(fileName, "w");
-    if (!f) { perror("fopen"); return; }
-
-
-
-    if (!fl) { fputs("Flight: (null)", f); return; }
-    fprintf(f, "Flight: company=\"%s\", no=\"%s\"\n", fl->company, fl->no);
-
-    fprintf(f, "  ");
-    Plane* pl = fl->plane;
-    fprintf(f, "Plane: name=\"%s\", seats=%d, maxKg=%d\n", pl->name, pl->seats, pl->maxKg);
-    fprintf(f, "  Passengers (%d):\n", fl->numOfPassengers);
-    for (int i = 0; i < fl->numOfPassengers; i++) {
-        fprintf(f, "    #%d: ", i + 1);
-        Passenger* ps = &fl->passengers[i];
-        fprintf(f, "Passenger: name=\"%s\", seat=%c-%d, luggage=%d kg\n", ps->name, ps->row, ps->seat, ps->luggage);
-    }
-
-    printf("A\n");
-
-    fclose(f);
-}
-
-void WorkWithDynamicArray() {
-    Plane p1 = {"Boeing-747", 100, 300};
-
-    Flight* allFlights = NULL;
-    int numOfFlights = 0;
-    createNewFlight2(&allFlights, &numOfFlights, "El-Al", "EE12343", "TLV", "NYC", &p1);
-    PrintFlight(&allFlights[0]);
-}
-
-void WorkWithDB() {
     DB db;
     db.numOfFlights = 0;
     db.flights = NULL;
@@ -163,21 +117,33 @@ void WorkWithDB() {
     Plane p1 = {"Boeing-747", 100, 300};
     Plane p2 = {"Airbus-A380", 200, 400};
 
+
     createNewFlight(&db, "El-Al", "EE123", "TLV", "NYC", &p1);
-    createNewFlight(&db, "El-Al", "EE124", "TLV", "TKY", &p1);
-    createNewFlight(&db, "El-Al", "EE125", "LAS", "NYC", &p2);
 
+
+    printf("----------\n");
+    // PrintFlight(&f1);
+    //
+    // addPassengerToFlight(&f1, "Elad-Elimelech", 'B', 1, 60);
+    // addPassengerToFlight(&f1, "May-Haker", 'C', 6, 30);
+    // printf("----------\n");
+    // PrintFlight(&f1);
+    //
+    // printf("----------\n");
+    // PrintSeat(&f1, "Elad-Elimelech");
+    // PrintSeat(&f1, "May-Haker");
+    // PrintSeat(&f1, "Guy");
+    //
+    // printf("----------\n");
+    // printf("can abroad: %d\n", CanAbroad(&f1));
+    // addPassengerToFlight(&f1, "Noa", 'C', 5, 30);
+    // printf("can abroad: %d", CanAbroad(&f1));
+
+
+    printf("----------\n");
     AddPassengersFromFile(&db.flights[0], "TLV_NYC.txt");
-
+    printf("----------\n");
     PrintFlight(&db.flights[0]);
-    GenerateFlightReport(&db.flights[0]);
-}
-
-void startAirAfeka() {
-    printf("▧ ▧ ▧ ▧ Welcome to AirAfeka ▧ ▧ ▧ ▧\n");
-
-
-    WorkWithDB();
 }
 
 

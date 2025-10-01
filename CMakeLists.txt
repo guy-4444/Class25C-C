@@ -44,5 +44,7 @@ add_executable(Class25C main.c
         Cinemafeka.h
         AirAfeka.c
         AirAfeka.h
+        Bitwise.c
+        Bitwise.h
 
 )

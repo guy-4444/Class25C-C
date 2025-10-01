@@ -15,13 +15,14 @@
 #include "Submarines.h"
 // #include "L10.h"
 #include "AirAfeka.h"
+#include "Bitwise.h"
 #include "Coffeka.h"
 #include "Cinemafeka.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startAirAfeka();
+    startBitwise();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");
