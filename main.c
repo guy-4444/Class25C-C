@@ -18,11 +18,12 @@
 #include "Bitwise.h"
 #include "Coffeka.h"
 #include "Cinemafeka.h"
+#include "Gaming.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    startBitwise();
+    StartGaming();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");

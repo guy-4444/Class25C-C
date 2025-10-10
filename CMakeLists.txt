@@ -46,5 +46,7 @@ add_executable(Class25C main.c
         AirAfeka.h
         Bitwise.c
         Bitwise.h
+        Gaming.c
+        Gaming.h
 
 )

@@ -3,34 +3,34 @@
 #include <stdlib.h>
 
 typedef struct {
-    char* name;
+    char *name;
     int age;
 } Actor;
 
 typedef struct {
-    char* title;
+    char *title;
     int duration;
     int numOfActors;
-    Actor* actors;
+    Actor *actors;
 } Movie;
 
-void PrintActor(Actor* actor) {
+void PrintActor(Actor *actor) {
     if (!actor) {
         printf("   - (null actor)\n");
         return;
     }
-    const char* name = actor->name ? actor->name : "(unnamed)";
+    const char *name = actor->name ? actor->name : "(unnamed)";
     printf("   - %s, age %d\n", name, actor->age);
 }
 
-void PrintMovie(Movie* movie) {
+void PrintMovie(Movie *movie) {
     printf("\n--");
 
     if (!movie) {
         printf("(null movie)\n");
         return;
     }
-    const char* title = movie->title ? movie->title : "(untitled)";
+    const char *title = movie->title ? movie->title : "(untitled)";
     printf("Movie: %s\n", title);
     printf("Duration: %d minutes\n", movie->duration);
 
@@ -46,12 +46,12 @@ void PrintMovie(Movie* movie) {
     }
 }
 
-void BuildActor(Actor* actors, int index, char* str, int age) {
+void BuildActor(Actor *actors, int index, char *str, int age) {
     actors[index].name = str;
     actors[index].age = age;
 }
 
-void BuildMovie(Movie* movies, int index, char* str, int duration) {
+void BuildMovie(Movie *movies, int index, char *str, int duration) {
     movies[index].title = str;
     movies[index].duration = duration;
     movies[index].numOfActors = 0;
@@ -62,9 +62,9 @@ void BuildMovie(Movie* movies, int index, char* str, int duration) {
     // printf("▧ ▧ ▧\n");
 }
 
-void AddActorToMovie(Movie* movie, Actor* actor) {
+void AddActorToMovie(Movie *movie, Actor *actor) {
     int newCount = movie->numOfActors + 1;
-    Actor* grown = (Actor*)realloc(movie->actors, newCount * sizeof(Actor));
+    Actor *grown = (Actor *) realloc(movie->actors, newCount * sizeof(Actor));
 
     movie->actors[movie->numOfActors] = *actor;
     movie->actors = grown;
@@ -75,13 +75,13 @@ void startCinemafeka() {
     printf("▧ ▧ ▧ ▧ Welcome to Cinemafeka ▧ ▧ ▧ ▧\n");
 
     int SZ = 4;
-    Actor* actors = (Actor*) calloc(5,(sizeof(Actor)));
+    Actor *actors = (Actor *) calloc(5, (sizeof(Actor)));
     BuildActor(actors, 0, "Tom Hanks", 60);
     BuildActor(actors, 1, "John Travolta", 70);
     BuildActor(actors, 2, "Samuel L. Jackson", 80);
     BuildActor(actors, 3, "Liam Neeson", 56);
     BuildActor(actors, 4, "Gal Gadot", 45);
-    Movie* movies = (Movie*) calloc(SZ,(sizeof(Movie)));
+    Movie *movies = (Movie *) calloc(SZ, (sizeof(Movie)));
 
 
     PrintMovie(&movies[0]);
@@ -97,6 +97,10 @@ void startCinemafeka() {
     // for (int i = 0; i < 5; ++i) {
     //     PrintActor(&actors[i]);
     // }
-
 }
 
+void shiftMoviesRight(Movie **movies, int shiftStart, int length) {
+    for (int i = length - 1; i >= shiftStart; i--) {
+        movies[i + 1] = movies[i];
+    }
+}
