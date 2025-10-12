@@ -48,5 +48,7 @@ add_executable(Class25C main.c
         Bitwise.h
         Gaming.c
         Gaming.h
+        MatrixLogic.c
+        MatrixLogic.h
 
 )

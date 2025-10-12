@@ -19,11 +19,12 @@
 #include "Coffeka.h"
 #include "Cinemafeka.h"
 #include "Gaming.h"
+#include "MatrixLogic.h"
 
 int main(void) {
     printf("◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍ ◍\n\n");
 
-    StartGaming();
+    StartMatrixLogic();
 
     // int d, m, y;
     // printf("enter data dd.mm.yyyy:");
